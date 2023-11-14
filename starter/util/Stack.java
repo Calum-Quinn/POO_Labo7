@@ -24,10 +24,4 @@ public class Stack<T> {
     public T[] getStack() {
         return null;
     }
-
-    public Iterator<T> iterator() {
-        return null;
-    }
-
-
 }

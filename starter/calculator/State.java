@@ -1,2 +1,4 @@
-package calculator;public class State {
+package calculator;
+
+public class State {
 }

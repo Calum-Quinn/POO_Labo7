@@ -1,6 +1,6 @@
 package calculator;
 
-abstract class Operator
+public abstract class Operator
 {
-  abstract void execute();
+  public abstract void execute();
 }
