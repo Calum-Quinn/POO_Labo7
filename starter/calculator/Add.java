@@ -1,9 +1,9 @@
-package calculator.operations;
+package calculator;
 
 import calculator.Operator;
 
 public class Add extends Operator {
-    public void execute() {
+    void execute() {
 
     }
 }

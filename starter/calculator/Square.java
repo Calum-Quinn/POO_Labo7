@@ -1,9 +1,9 @@
-package calculator.operations;
+package calculator;
 
 import calculator.Operator;
 
 public class Square extends Operator {
-    public void execute() {
+    void execute() {
 
     }
 }
