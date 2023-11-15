@@ -6,6 +6,6 @@ class MemoryStore extends Operator {
         super(state);
     }
     void execute() {
-
+        state.setMemory(state.getVal());
     }
 }
