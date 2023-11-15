@@ -1,6 +1,6 @@
 package calculator;
 
-public class Divide extends Operator {
+public class Clear extends Operator {
     void execute() {
 
     }

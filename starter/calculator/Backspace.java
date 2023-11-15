@@ -1,6 +1,6 @@
 package calculator;
 
-public class Divide extends Operator {
+public class Backspace extends Operator {
     void execute() {
 
     }

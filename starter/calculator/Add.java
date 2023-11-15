@@ -1,9 +1,7 @@
 package calculator;
 
-import calculator.Operator;
-
 public class Add extends Operator {
     void execute() {
-
+//        state.setCurrentValue(state.getNextVal() + state.getNextVal());
     }
 }
