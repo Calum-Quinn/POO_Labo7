@@ -1,27 +1,87 @@
 package util;
 
-public class Stack<T> {
-    private class Element {
-        private final T value;
-        private final Element next;
+import java.util.ArrayList;
+import java.util.Iterator;
 
-        public Element(T value, Element next) {
+public class Stack<T> implements Iterable<T> {
+    private Item<T> top;
+
+    public Stack() {
+        top = null;
+    }
+
+    public void push(T value) {
+        Item<T> newItem = new Item<>(value);
+        newItem.next = top;
+        top = newItem;
+    }
+
+    public T pop() {
+        if (top == null) {
+            return null; // TODO: throw exception ?
+        }
+        T value = top.value;
+        top = top.next;
+
+        return value;
+    }
+
+    public ArrayList<T> getStack() {
+        ArrayList<T> list = new ArrayList<T>();
+        Item<T> item = top;
+
+        while (item != null) {
+            list.add(item.value);
+            item = item.next;
+        }
+
+        return list;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        Item<T> item = top;
+
+        while (item != null) {
+            sb.append(item.value).append("\n");
+            item = item.next;
+        }
+
+        return sb.toString();
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new StackIterator();
+    }
+
+    private static class Item<T> {
+        private final T value;
+        private Item<T> next;
+
+        public Item(T value) {
             this.value = value;
-            this.next = next;
+            next = null;
         }
     }
 
-    public void stack(T value) {
-    }
+    private class StackIterator implements Iterator<T> {
+        private Item<T> current = top;
 
-    public void unstack() {
-    }
+        @Override
+        public boolean hasNext() {
+            return current.next != null;
+        }
 
-    public String toString() {
-        return "";
-    }
+        @Override
+        public T next() {
+            if (!hasNext()) {
+                return null;
+            }
+            current = current.next;
 
-    public T[] getStack() {
-        return null;
+            return current.value;
+        }
     }
 }
