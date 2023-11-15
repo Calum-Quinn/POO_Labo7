@@ -1,6 +1,10 @@
 package calculator;
 
-public class MemoryStore extends Operator {
+class MemoryStore extends Operator {
+
+    MemoryStore(State state) {
+        super(state);
+    }
     void execute() {
 
     }

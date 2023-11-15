@@ -1,6 +1,10 @@
 package calculator;
 
-public class Backspace extends Operator {
+class Backspace extends Operator {
+
+    Backspace(State state) {
+        super(state);
+    }
     void execute() {
 
     }

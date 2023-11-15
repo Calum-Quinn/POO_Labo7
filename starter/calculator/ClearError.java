@@ -1,6 +1,10 @@
 package calculator;
 
-public class ClearError extends Operator {
+class ClearError extends Operator {
+
+    ClearError(State state) {
+        super(state);
+    }
     void execute() {
 
     }

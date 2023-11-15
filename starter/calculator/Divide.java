@@ -1,6 +1,10 @@
 package calculator;
 
-public class Divide extends Operator {
+class Divide extends Operator {
+
+    Divide(State state) {
+        super(state);
+    }
     void execute() {
 
     }

@@ -1,6 +1,10 @@
 package calculator;
 
-public class Multiply extends Operator {
+class Multiply extends Operator {
+
+    Multiply(State state) {
+        super(state);
+    }
     void execute() {
 
     }

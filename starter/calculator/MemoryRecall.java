@@ -1,6 +1,10 @@
 package calculator;
 
-public class MemoryRecall extends Operator {
+class MemoryRecall extends Operator {
+
+    MemoryRecall(State state) {
+        super(state);
+    }
     void execute() {
 
     }

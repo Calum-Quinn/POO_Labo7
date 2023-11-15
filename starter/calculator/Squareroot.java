@@ -1,6 +1,10 @@
 package calculator;
 
-public class Squareroot extends Operator {
+class Squareroot extends Operator {
+
+    Squareroot(State state) {
+        super(state);
+    }
     void execute() {
 
     }

@@ -1,6 +1,10 @@
 package calculator;
 
-public class Clear extends Operator {
+class Clear extends Operator {
+
+    Clear(State state) {
+        super(state);
+    }
     void execute() {
 
     }

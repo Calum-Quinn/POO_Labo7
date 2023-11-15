@@ -1,6 +1,10 @@
 package calculator;
 
-public class Square extends Operator {
+class Square extends Operator {
+
+    Square(State state) {
+        super(state);
+    }
     void execute() {
 
     }

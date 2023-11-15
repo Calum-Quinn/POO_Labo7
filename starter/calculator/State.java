@@ -2,15 +2,14 @@ package calculator;
 
 import util.Stack;
 
-public class State<T> {
-    private Stack<T> stack;
-    private T currentValue;
+public class State {
+    private Stack<Double> stack;
 
-    public void setCurrentValue(T currentValue) {
-        this.currentValue = currentValue;
+    public Double getVal() {
+        return stack.pop();
     }
 
-    public T getNextVal() {
-        return stack.pop();
+    public void setVal(Double val) {
+        stack.push(val);
     }
 }

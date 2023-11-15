@@ -1,6 +1,10 @@
 package calculator;
 
-public class PlusMinus extends Operator {
+class PlusMinus extends Operator {
+
+    PlusMinus(State state) {
+        super(state);
+    }
     void execute() {
 
     }

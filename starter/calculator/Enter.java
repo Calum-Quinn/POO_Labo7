@@ -1,6 +1,10 @@
 package calculator;
 
-public class Enter extends Operator {
+class Enter extends Operator {
+
+    Enter(State state) {
+        super(state);
+    }
     void execute() {
 
     }

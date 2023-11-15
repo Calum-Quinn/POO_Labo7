@@ -1,7 +1,11 @@
 package calculator;
 
-public class Add extends Operator {
+class Add extends Operator {
+
+    Add(State state) {
+        super(state);
+    }
     void execute() {
-//        state.setCurrentValue(state.getNextVal() + state.getNextVal());
+        state.setVal(state.getVal() + state.getVal());
     }
 }
