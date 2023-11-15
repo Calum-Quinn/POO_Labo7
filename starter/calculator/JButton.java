@@ -1,2 +1,4 @@
-package calculator;public class JButton {
+package calculator;
+
+public class JButton {
 }

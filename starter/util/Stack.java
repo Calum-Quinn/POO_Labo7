@@ -56,8 +56,8 @@ public class Stack<T> implements Iterable<T> {
         return new StackIterator();
     }
 
-    private class Item<T> {
-        private T value;
+    private static class Item<T> {
+        private final T value;
         private Item<T> next;
 
         public Item(T value) {
