@@ -83,7 +83,7 @@ public class JCalculator extends JFrame
     // Boutons 1-9
     for (int i = 1; i < 10; i++) 
       addOperatorButton(String.valueOf(i), (i - 1) % 3, 4 - (i - 1) / 3, 
-			Color.BLUE, null);
+			Color.BLUE, new Digit(state));
     // Bouton 0
     addOperatorButton("0", 0, 5, Color.BLUE, new Zero(state));
 
