@@ -6,6 +6,6 @@ class Subtract extends Operator {
         super(state);
     }
     void execute() {
-
+        state.setVal(-state.getVal() + state.getVal());
     }
 }

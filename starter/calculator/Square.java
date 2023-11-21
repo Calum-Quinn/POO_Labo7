@@ -6,6 +6,6 @@ class Square extends Operator {
         super(state);
     }
     void execute() {
-
+        state.setVal(Math.pow(state.getVal(),2));
     }
 }

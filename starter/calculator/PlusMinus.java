@@ -6,6 +6,6 @@ class PlusMinus extends Operator {
         super(state);
     }
     void execute() {
-
+        state.setVal(-state.getVal());
     }
 }

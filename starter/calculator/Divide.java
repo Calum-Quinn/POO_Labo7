@@ -6,6 +6,6 @@ class Divide extends Operator {
         super(state);
     }
     void execute() {
-
+        state.setVal(1 / state.getVal() * state.getVal());
     }
 }

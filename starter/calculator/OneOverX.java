@@ -6,6 +6,6 @@ class OneOverX extends Operator {
         super(state);
     }
     void execute() {
-
+        state.setVal(1 / state.getVal());
     }
 }
