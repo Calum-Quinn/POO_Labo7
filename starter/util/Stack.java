@@ -1,10 +1,21 @@
 package util;
 
 import java.util.ArrayList;
+import java.util.EmptyStackException;
 import java.util.Iterator;
 
+class Item<T> {
+    T value;
+    Item<T> next;
+
+    public Item(T value) {
+        this.value = value;
+        next = null;
+    }
+}
+
 public class Stack<T> implements Iterable<T> {
-    private Item<T> top;
+    Item<T> top;
 
     public Stack() {
         top = null;
@@ -18,7 +29,7 @@ public class Stack<T> implements Iterable<T> {
 
     public T pop() {
         if (top == null) {
-            return null; // TODO: throw exception ?
+            throw new EmptyStackException();
         }
         T value = top.value;
         top = top.next;
@@ -53,35 +64,6 @@ public class Stack<T> implements Iterable<T> {
 
     @Override
     public Iterator<T> iterator() {
-        return new StackIterator();
-    }
-
-    private static class Item<T> {
-        private final T value;
-        private Item<T> next;
-
-        public Item(T value) {
-            this.value = value;
-            next = null;
-        }
-    }
-
-    private class StackIterator implements Iterator<T> {
-        private Item<T> current = top;
-
-        @Override
-        public boolean hasNext() {
-            return current.next != null;
-        }
-
-        @Override
-        public T next() {
-            if (!hasNext()) {
-                return null;
-            }
-            current = current.next;
-
-            return current.value;
-        }
+        return new StackIterator<>(this);
     }
 }
