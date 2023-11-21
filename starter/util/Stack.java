@@ -15,9 +15,11 @@ class Item<T> {
 
 public class Stack<T> implements Iterable<T> {
     Item<T> top;
+    int size;
 
     public Stack() {
         top = null;
+        size = 0;
     }
 
     public void push(T value) {
@@ -28,7 +30,7 @@ public class Stack<T> implements Iterable<T> {
     }
 
     public T pop() {
-        if (top == null) {
+        if (isEmpty()) {
             throw new EmptyStackException();
         }
         T value = top.value;
@@ -36,6 +38,10 @@ public class Stack<T> implements Iterable<T> {
         --size;
 
         return value;
+    }
+
+    public boolean isEmpty() {
+        return top == null;
     }
 
     public Object[] getStack() {
@@ -50,7 +56,7 @@ public class Stack<T> implements Iterable<T> {
             item = item.next;
         }
 
-        return list;
+        return array;
     }
 
     @Override
