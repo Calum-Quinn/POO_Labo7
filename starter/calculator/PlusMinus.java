@@ -6,6 +6,7 @@ class PlusMinus extends Operator {
         super(state);
     }
     void execute() {
-        state.setVal(-state.getVal());
+        // Invert the sign of the current value
+        state.setCurrentValue(Double.toString(-Double.parseDouble(state.getCurrentValue())));
     }
 }

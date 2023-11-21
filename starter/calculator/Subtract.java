@@ -6,6 +6,7 @@ class Subtract extends Operator {
         super(state);
     }
     void execute() {
-        state.setVal(-state.getVal() + state.getVal());
+        // Subtract the last number from the second last number on the stack
+        state.setCurrentValue(Double.toString(-state.getStackVal() + state.getStackVal()));
     }
 }

@@ -6,6 +6,7 @@ class ClearError extends Operator {
         super(state);
     }
     void execute() {
-
+        // Set the current value to it's default, 0
+        state.setCurrentValue("0");
     }
 }

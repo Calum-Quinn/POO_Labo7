@@ -6,6 +6,8 @@ class Enter extends Operator {
         super(state);
     }
     void execute() {
-
+        // Add the current value to the stack
+        state.setStackVal(Double.parseDouble(state.getCurrentValue()));
+        state.setCurrentValue("0");
     }
 }

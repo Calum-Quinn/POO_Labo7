@@ -6,6 +6,7 @@ class Divide extends Operator {
         super(state);
     }
     void execute() {
-        state.setVal(1 / state.getVal() * state.getVal());
+        // Divide the second to last number by the last number on the stack
+        state.setCurrentValue(Double.toString(1 / state.getStackVal() * state.getStackVal()));
     }
 }

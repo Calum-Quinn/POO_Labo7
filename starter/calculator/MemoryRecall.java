@@ -6,6 +6,7 @@ class MemoryRecall extends Operator {
         super(state);
     }
     void execute() {
-        state.setVal(state.getMemory());
+        // Recall the last stored value
+        state.setCurrentValue(state.getMemory());
     }
 }

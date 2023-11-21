@@ -5,21 +5,31 @@ import util.Stack;
 public class State {
     private Stack<Double> stack;
 
-    private Double memory;
+    private String currentValue = "0";
 
-    public Double getVal() {
+    private String memory;
+
+    public Double getStackVal() {
         return stack.pop();
     }
 
-    public void setVal(Double val) {
+    public void setStackVal(Double val) {
         stack.push(val);
     }
 
-    public Double getMemory() {
+    public String getCurrentValue() {
+        return currentValue;
+    }
+
+    public void setCurrentValue(String currentValue) {
+        this.currentValue = currentValue;
+    }
+
+    public String getMemory() {
         return memory;
     }
 
-    public void setMemory(Double memory) {
+    public void setMemory(String memory) {
         this.memory = memory;
     }
 }

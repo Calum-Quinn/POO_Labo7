@@ -1,17 +1,8 @@
 package calculator;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
-
 import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JList;
-import javax.swing.JScrollPane;
-import javax.swing.JTextField;
+import javax.swing.*;
+import java.awt.*;
 
 //import java.awt.event.*;
 
@@ -94,13 +85,13 @@ public class JCalculator extends JFrame
       addOperatorButton(String.valueOf(i), (i - 1) % 3, 4 - (i - 1) / 3, 
 			Color.BLUE, null);
     // Bouton 0
-    addOperatorButton("0", 0, 5, Color.BLUE, new Digit(state));
+    addOperatorButton("0", 0, 5, Color.BLUE, new Zero(state));
 
     // Changement de signe de la valeur courante
     addOperatorButton("+/-", 1, 5, Color.BLUE, new PlusMinus(state));
 
     // Operateur point (chiffres apres la virgule ensuite)
-    addOperatorButton(".", 2, 5, Color.BLUE, new Digit(state));
+    addOperatorButton(".", 2, 5, Color.BLUE, new Dot(state));
 
     // Operateurs arithmetiques a deux operandes: /, *, -, +
     addOperatorButton("/", 3, 2, Color.RED, new Divide(state));

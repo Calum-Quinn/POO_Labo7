@@ -6,6 +6,7 @@ class Squareroot extends Operator {
         super(state);
     }
     void execute() {
-        state.setVal(Math.sqrt(state.getVal()));
+        // Squareroot of the current value
+        state.setCurrentValue(Double.toString(Math.sqrt(Double.parseDouble(state.getCurrentValue()))));
     }
 }

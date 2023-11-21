@@ -8,6 +8,6 @@ class Digit extends Operator {
 
     //TROUVER COMMENT SAVOIR QUEL CHIFFRE
     void execute() {
-
+        // Enter a new digit to the current value
     }
 }
