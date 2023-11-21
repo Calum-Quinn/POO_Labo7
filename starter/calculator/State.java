@@ -17,6 +17,12 @@ public class State {
         stack.push(val);
     }
 
+    public void emptyStack(){
+        while(stack.iterator().hasNext()) {
+            getStackVal();
+        }
+    }
+
     public String getCurrentValue() {
         return currentValue;
     }
