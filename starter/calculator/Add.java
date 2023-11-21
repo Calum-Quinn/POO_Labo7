@@ -7,6 +7,7 @@ class Add extends Operator {
     }
     void execute() {
         // Add together the last two values on the stack
-        state.setCurrentValue(Double.toString(state.getStackVal() + state.getStackVal()));
+        state.setCurrentValue(Double.toString(Double.parseDouble(state.getCurrentValue()) + state.getStackVal()));
+        state.setResult(true);
     }
 }

@@ -7,6 +7,7 @@ class Multiply extends Operator {
     }
     void execute() {
         // Multiply together the last two values on the stack
-        state.setCurrentValue(Double.toString(state.getStackVal() * state.getStackVal()));
+        state.setCurrentValue(Double.toString(state.getStackVal() * Double.parseDouble(state.getCurrentValue())));
+        state.setResult(true);
     }
 }

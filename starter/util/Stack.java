@@ -1,6 +1,5 @@
 package util;
 
-import java.util.ArrayList;
 import java.util.EmptyStackException;
 import java.util.Iterator;
 
@@ -25,6 +24,7 @@ public class Stack<T> implements Iterable<T> {
         Item<T> newItem = new Item<>(value);
         newItem.next = top;
         top = newItem;
+        ++size;
     }
 
     public T pop() {
@@ -33,16 +33,20 @@ public class Stack<T> implements Iterable<T> {
         }
         T value = top.value;
         top = top.next;
+        --size;
 
         return value;
     }
 
-    public ArrayList<T> getStack() {
-        ArrayList<T> list = new ArrayList<T>();
+    public Object[] getStack() {
+        if (isEmpty()) {
+            throw new EmptyStackException();
+        }
+        Object[] array = new Object[size];
         Item<T> item = top;
 
-        while (item != null) {
-            list.add(item.value);
+        for (int i = 0; i < array.length; ++i) {
+            array[i] = item.value;
             item = item.next;
         }
 
