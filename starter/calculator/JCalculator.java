@@ -26,10 +26,12 @@ public class JCalculator extends JFrame
   private void update()
   {
     // Modifier une zone de texte, JTextField.setText(string nom)
-    jNumber.setText(state.getCurrentValue());
+    jNumber.setText(state.currentValue);
     // Modifier un composant liste, JList.setListData(Object[] tableau
-    if (state.getStack() != null) {
-      jStack.setListData(state.getStack());
+    if (state.stack.isEmpty()) {
+      jStack.setListData(empty);
+    } else {
+      jStack.setListData(state.stack.getStack());
     }
   }
 
@@ -106,7 +108,7 @@ public class JCalculator extends JFrame
     // Operateurs arithmetiques a un operande: 1/x, x^2, Sqrt
     addOperatorButton("1/x", 4, 2, Color.RED, new OneOverX(state));
     addOperatorButton("x^2", 4, 3, Color.RED, new Square(state));
-    addOperatorButton("Sqrt", 4, 4, Color.RED, new Squareroot(state));
+    addOperatorButton("Sqrt", 4, 4, Color.RED, new SquareRoot(state));
 
     // Entree: met la valeur courante sur le sommet de la pile
     addOperatorButton("Ent", 4, 5, Color.RED, new Enter(state));

@@ -2,70 +2,44 @@ package calculator;
 
 import util.Stack;
 
-import java.util.Iterator;
+class State {
+    final Stack<String> stack;
 
-public class State {
-    private Stack<Double> stack;
+    String currentValue, memory;
 
-    private String currentValue = "0";
-
-    private boolean isResult;
-
-    private String memory;
+    boolean hasResult, hasError;
 
     State() {
         stack = new Stack<>();
+        currentValue = "0";
+        memory = "0";
+        hasResult = false;
+        hasError = false;
     }
 
-    public boolean isResult() {
-        return isResult;
+    /**
+     * Check if the current value is 0
+     * Since we are using doubles, we need to check if the value is 0.0
+     * @return true if the current value is 0, false otherwise
+     */
+    boolean isCurrentValueZero() {
+        return Double.parseDouble(currentValue) == 0;
     }
 
-    public void setResult(boolean result) {
-        isResult = result;
+    /**
+     * Check if the calculus can be done
+     * @return true if the calculus can be done, false otherwise
+     */
+    boolean cannotCalculate() {
+        return hasError || stack.isEmpty();
     }
 
-    public Double getStackVal() {
-        return stack.pop();
-    }
-
-    public void setStackVal(Double val) {
-        stack.push(val);
-    }
-
-    public Object[] getStack() {
-        if (stack.isEmpty()) {
-            return null;
-        }
-
-        return stack.getStack();
-    }
-
-    public void emptyStack(){
-
-        // A REGARDER POUR VIDER LA STACK
-
-
-        Iterator<Double> it = stack.iterator();
-        while(it.hasNext()) {
-            getStackVal();
-        }
-        getStackVal();
-    }
-
-    public String getCurrentValue() {
-        return currentValue;
-    }
-
-    public void setCurrentValue(String currentValue) {
-        this.currentValue = currentValue;
-    }
-
-    public String getMemory() {
-        return memory;
-    }
-
-    public void setMemory(String memory) {
-        this.memory = memory;
+    /**
+     * Clear the current value and reset the state
+     */
+    void clearCurrentValue() {
+        currentValue = "0";
+        hasResult = false;
+        hasError = false;
     }
 }

@@ -1,13 +1,17 @@
 package calculator;
 
 class Backspace extends Operator {
-
     Backspace(State state) {
         super(state);
     }
+
     void execute() {
+        if (state.hasError) {
+            state.clearCurrentValue();
+            return;
+        }
+
         // Remove the last digit from the current value
-        String val = state.getCurrentValue();
-        state.setCurrentValue(val.substring(0,val.length() - 1));
+        state.currentValue = state.currentValue.substring(0, state.currentValue.length() - 1);
     }
 }

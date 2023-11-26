@@ -1,13 +1,21 @@
 package calculator;
 
 class Add extends Operator {
-
     Add(State state) {
         super(state);
     }
+
     void execute() {
-        // Add together the last two values on the stack
-        state.setCurrentValue(Double.toString(Double.parseDouble(state.getCurrentValue()) + state.getStackVal()));
-        state.setResult(true);
+        if (state.cannotCalculate()) {
+            return;
+        }
+
+        // Add together the current value and the last value of the stack
+        state.currentValue = Double.parseDouble(state.currentValue) + Double.parseDouble(state.stack.pop()) + "";
+        state.hasResult = true;
+
+        if (state.isCurrentValueZero()) {
+            state.currentValue = "0";
+        }
     }
 }

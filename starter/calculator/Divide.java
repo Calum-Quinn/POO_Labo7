@@ -1,13 +1,21 @@
 package calculator;
 
 class Divide extends Operator {
-
     Divide(State state) {
         super(state);
     }
+    
     void execute() {
-        // Divide the second to last number by the last number on the stack
-        state.setCurrentValue(Double.toString(state.getStackVal() / Double.parseDouble(state.getCurrentValue())));
-        state.setResult(true);
+        if (state.cannotCalculate()) {
+            return;
+        }
+
+        // Divide the current value with the last value of the stack
+        state.currentValue = Double.parseDouble(state.currentValue) / Double.parseDouble(state.stack.pop()) + "";
+        state.hasResult = true;
+
+        if (state.isCurrentValueZero()) {
+            state.currentValue = "0";
+        }
     }
 }

@@ -1,13 +1,21 @@
 package calculator;
 
 class Multiply extends Operator {
-
     Multiply(State state) {
         super(state);
     }
+    
     void execute() {
-        // Multiply together the last two values on the stack
-        state.setCurrentValue(Double.toString(state.getStackVal() * Double.parseDouble(state.getCurrentValue())));
-        state.setResult(true);
+        if (state.cannotCalculate()) {
+            return;
+        }
+
+        // Multiply together the current value and the last value of the stack
+        state.currentValue = Double.parseDouble(state.currentValue) * Double.parseDouble(state.stack.pop()) + "";
+        state.hasResult = true;
+
+        if (state.isCurrentValueZero()) {
+            state.currentValue = "0";
+        }
     }
 }

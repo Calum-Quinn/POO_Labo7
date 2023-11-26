@@ -7,9 +7,8 @@ public class Dot extends Operator{
 
     void execute() {
         // Add a dot to the current value if there isn't already one in the value
-        String val = state.getCurrentValue();
-        if (val.indexOf('.') == -1) {
-            state.setCurrentValue(val + '.');
+        if (state.currentValue.indexOf('.') == -1 && !state.hasError) {
+            state.currentValue += '.';
         }
     }
 }

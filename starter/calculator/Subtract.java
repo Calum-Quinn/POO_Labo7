@@ -1,13 +1,21 @@
 package calculator;
 
 class Subtract extends Operator {
-
     Subtract(State state) {
         super(state);
     }
+    
     void execute() {
-        // Subtract the last number from the second last number on the stack
-        state.setCurrentValue(Double.toString(state.getStackVal() + Double.parseDouble(state.getCurrentValue())));
-        state.setResult(true);
+        if (state.cannotCalculate()) {
+            return;
+        }
+
+        // Subtract the current value with the last value of the stack
+        state.currentValue = Double.parseDouble(state.currentValue) - Double.parseDouble(state.stack.pop()) + "";
+        state.hasResult = true;
+
+        if (state.isCurrentValueZero()) {
+            state.currentValue = "0";
+        }
     }
 }

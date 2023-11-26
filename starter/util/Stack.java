@@ -46,7 +46,7 @@ public class Stack<T> implements Iterable<T> {
 
     public Object[] getStack() {
         if (isEmpty()) {
-            throw new EmptyStackException();
+            //throw new EmptyStackException();
         }
         Object[] array = new Object[size];
         Item<T> item = top;
@@ -57,6 +57,12 @@ public class Stack<T> implements Iterable<T> {
         }
 
         return array;
+    }
+
+    public void clear() {
+        while (!isEmpty()) {
+            pop();
+        }
     }
 
     @Override

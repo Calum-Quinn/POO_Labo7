@@ -4,7 +4,7 @@ import java.util.Objects;
 
 class Digit extends Operator {
 
-    private String number;
+    String number;
 
     Digit(State state, int number) {
         super(state);
@@ -12,19 +12,21 @@ class Digit extends Operator {
     }
 
     void execute() {
-        // If the current value is the result from a previous calculation, add it to the stack
-        String val = state.getCurrentValue();
-        if (state.isResult()) {
-            state.setStackVal(Double.parseDouble(val));
-            state.setResult(false);
+        if (state.hasError) {
+            return;
         }
 
-        // Add a new digit to the current value if not 0
-        if (Objects.equals(val, "0")) {
-            state.setCurrentValue(number);
+        // If the current value is the result from the previous calculation, add it to the stack unless it is 0
+        if (state.hasResult && !state.isCurrentValueZero()) {
+            state.stack.push(state.currentValue);
+            state.clearCurrentValue();
         }
-        else {
-            state.setCurrentValue(val + number);
+
+        // Add a new digit to the current value if not default 0
+        if (state.isCurrentValueZero()) {
+            state.currentValue = number;
+        } else {
+            state.currentValue += number;
         }
     }
 }
