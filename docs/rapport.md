@@ -6,6 +6,8 @@
 
 ## Diagramme de classes
 
+![img.png](img.png)
+
 ## Choix de conception
 
 ### Classe `Operator`
@@ -17,9 +19,11 @@ la classe `Operator` et qui permet de définir le comportement de l'opération.
 ### Classe `State`
 
 La classe `State` représente l'état actuel de la calculatrice. Elle contient la stack, la valeur courrante, la valeur en
-mémoire ainsi que deux variables booléennes qui permettent de savoir si l'opération précédente donnait un résultat ou s'
-il y a eu une erreur. À noter que nous travaillons avec des `String` pour la stack et la valeur courrante afin de
-faciliter la gestion de l'affichage.
+mémoire ainsi que deux variables booléennes qui permettent de savoir si l'opération précédente donnait un résultat ou
+s'il y a eu une erreur. À noter que nous travaillons avec des `String` pour la stack et la valeur courrante afin de
+faciliter la gestion de l'affichage. D'autre part, la classe ainsi que ses attributs et méthodes ont une visibilité
+package pour permettre aux classes du package `calculator` d'y accéder. Cela a du sens, car la classe `State` est
+le cœur de la calculatrice et il est donc logique que les classes du package `calculator` puissent y accéder.
 
 ## Tests effectués
 

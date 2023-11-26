@@ -7,7 +7,7 @@ class Item<T> {
     T value;
     Item<T> next;
 
-    public Item(T value) {
+    Item(T value) {
         this.value = value;
         next = null;
     }

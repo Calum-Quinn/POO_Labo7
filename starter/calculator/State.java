@@ -27,8 +27,8 @@ class State {
     }
 
     /**
-     * Check if the calculus can be done
-     * @return true if the calculus can be done, false otherwise
+     * Check if the calculus cannot be done
+     * @return true if the calculus cannot be done, false otherwise
      */
     boolean cannotCalculate() {
         return hasError || stack.isEmpty();
