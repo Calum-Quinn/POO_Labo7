@@ -46,7 +46,7 @@ public class Stack<T> implements Iterable<T> {
 
     public Object[] getStack() {
         if (isEmpty()) {
-            //throw new EmptyStackException();
+            throw new EmptyStackException();
         }
         Object[] array = new Object[size];
         Item<T> item = top;
@@ -71,7 +71,7 @@ public class Stack<T> implements Iterable<T> {
         Item<T> item = top;
 
         while (item != null) {
-            sb.append(item.value).append("\n");
+            sb.append(item.value).append(" ");
             item = item.next;
         }
 

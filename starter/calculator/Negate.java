@@ -1,7 +1,7 @@
 package calculator;
 
-class PlusMinus extends Operator {
-    PlusMinus(State state) {
+class Negate extends Operator {
+    Negate(State state) {
         super(state);
     }
     

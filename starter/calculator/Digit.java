@@ -23,7 +23,7 @@ class Digit extends Operator {
         }
 
         // Add a new digit to the current value if not default 0
-        if (state.isCurrentValueZero()) {
+        if (state.currentValue.equals("0")) {
             state.currentValue = number;
         } else {
             state.currentValue += number;

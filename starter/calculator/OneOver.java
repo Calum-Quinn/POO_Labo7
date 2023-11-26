@@ -1,9 +1,7 @@
 package calculator;
 
-import java.util.Objects;
-
-class OneOverX extends Operator {
-    OneOverX(State state) {
+class OneOver extends Operator {
+    OneOver(State state) {
         super(state);
     }
     

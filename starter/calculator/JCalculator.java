@@ -20,7 +20,7 @@ public class JCalculator extends JFrame
   // Contraintes pour le placement des composants graphiques
   private final GridBagConstraints constraints = new GridBagConstraints();
 
-  State state = new State();
+  private final State state = new State();
 
   // Mise a jour de l'interface apres une operation (jList et jStack)
   private void update()
@@ -94,7 +94,7 @@ public class JCalculator extends JFrame
     addOperatorButton("0", 0, 5, Color.BLUE, new Zero(state));
 
     // Changement de signe de la valeur courante
-    addOperatorButton("+/-", 1, 5, Color.BLUE, new PlusMinus(state));
+    addOperatorButton("+/-", 1, 5, Color.BLUE, new Negate(state));
 
     // Operateur point (chiffres apres la virgule ensuite)
     addOperatorButton(".", 2, 5, Color.BLUE, new Dot(state));
@@ -106,7 +106,7 @@ public class JCalculator extends JFrame
     addOperatorButton("+", 3, 5, Color.RED, new Add(state));
 
     // Operateurs arithmetiques a un operande: 1/x, x^2, Sqrt
-    addOperatorButton("1/x", 4, 2, Color.RED, new OneOverX(state));
+    addOperatorButton("1/x", 4, 2, Color.RED, new OneOver(state));
     addOperatorButton("x^2", 4, 3, Color.RED, new Square(state));
     addOperatorButton("Sqrt", 4, 4, Color.RED, new SquareRoot(state));
 
