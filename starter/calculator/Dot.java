@@ -6,8 +6,8 @@ public class Dot extends Operator{
     }
 
     void execute() {
-        // Add a dot to the current value if there isn't already one in the value
-        if (state.currentValue.indexOf('.') == -1 && !state.hasError) {
+        // Add a dot to the current value if there isn't already one in the value and there is a number
+        if (state.currentValue.indexOf('.') == -1 && !state.hasError && !state.currentValue.isEmpty()) {
             state.currentValue += '.';
         }
     }

@@ -12,7 +12,7 @@ class SquareRoot extends Operator {
 
         if (state.currentValue.charAt(0) == '-') {
             state.hasError = true;
-            state.currentValue = "Cannot take the SquareRoot of a negative number";
+            state.currentValue = "Cannot calculate the SquareRoot of a negative number";
             return;
         }
 

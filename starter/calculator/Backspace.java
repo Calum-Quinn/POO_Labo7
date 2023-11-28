@@ -11,7 +11,9 @@ class Backspace extends Operator {
             return;
         }
 
-        // Remove the last digit from the current value
-        state.currentValue = state.currentValue.substring(0, state.currentValue.length() - 1);
+        // Remove the last character from the current value
+        if (!state.currentValue.isEmpty()) {
+            state.currentValue = state.currentValue.substring(0, state.currentValue.length() - 1);
+        }
     }
 }
