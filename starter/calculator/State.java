@@ -31,7 +31,7 @@ class State {
      * @return true if the calculus cannot be done, false otherwise
      */
     boolean cannotCalculate() {
-        return hasError || stack.isEmpty();
+        return hasError || stack.isEmpty() || currentValue.isEmpty();
     }
 
     /**
