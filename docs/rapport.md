@@ -2,7 +2,7 @@
 
 - Groupe : L07GrK
 - Etudiants : Calum Quinn, Dylan Ramos
-- Date de dernière modification : 26.11.2023
+- Date de dernière modification : 28.11.2023
 
 ## Diagramme de classes
 
@@ -40,10 +40,10 @@ le cœur de la calculatrice et il est donc logique que les classes du package `c
   celle-ci est ajoutée à la stack
 - [x] Clear : la stack est vidée et la valeur courante est remise à zéro
 - [x] Clear Error : la valeur courante est remise à zéro
-- [x] Backspace : le dernier chiffre de la valeur courante est supprimé
+- [x] Backspace : le dernier chiffre de la valeur courante est supprimé et rien ne se passe quand il y a rien d'affiché
 - [x] Point : un point est ajouté à la valeur courante, s'il y en a déjà un, rien ne se passe
 - [x] Signe : le signe de la valeur courante est inversé
+- [x] Divide : si la valeur actuellement affichée est un 0, un message d'erreur s'affiche
 - [x] Appui sur un chiffre après une opération : la valeur courante est remplacée par le chiffre et le résultat de
   l'opération précédente est ajouté à la stack
-- [x] Appui sur Ent : la valeur courante est ajoutée à la stack, si la valeur courante est un résultat, elle n'est pas
-  ajoutée à la stack
+- [x] Appui sur Ent : la valeur courante est ajoutée à la stack sauf si elle vaut 0
